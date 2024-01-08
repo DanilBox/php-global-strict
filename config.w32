@@ -1,0 +1,7 @@
+ARG_ENABLE('global_strict', 'global_strict support', 'no');
+
+if (PHP_GLOBAL_STRICT != 'no') {
+	AC_DEFINE('HAVE_GLOBAL_STRICT', 1, 'global_strict support enabled');
+
+	EXTENSION('global_strict', 'global_strict.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
